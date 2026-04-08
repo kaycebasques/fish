@@ -1,17 +1,8 @@
 #!/usr/bin/env fish
 
-# Set up vars for key dirs
-set my_conf (status dirname)
-set fish_conf "$HOME/.config/fish"
+set dir (status dirname)
 
-# Copy configs from my repo into fish config dir
-cp $my_conf/.bashrc $HOME/
-set dirs "conf.d" "functions"
-for dir in $dirs
-    set source "$my_conf/$dir"
-    set target "$fish_conf/$dir"
-    if not test -d $target
-        mkdir -p $target
-    end
-    cp $source/* $target/
-end
+cp $dir/.bashrc $HOME/.bashrc
+cp $dir/.config/user-dir.dirs $HOME/.config/user-dir.dirs
+cp $dir/.config/fish/conf.d/* $HOME/.config/fish/conf.d/
+cp $dir/.config/fish/functions/* $HOME/.config/fish/functions/
