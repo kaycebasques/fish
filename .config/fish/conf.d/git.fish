@@ -19,4 +19,8 @@ git config --global commit.gpgsign true
 
 if not test -d $HOME/pigweed
     echo "Pigweed repo not found. Run `fish ~/cli/repos.fish` to set up."
-end	
+end
+
+if not test -d $HOME/wt
+    mkdir $HOME/wt
+end
