@@ -9,6 +9,7 @@ if not test -e $HOME/.ssh/id_ed25519.pub
 end
 
 if not test -n "$(gpg --list-secret-keys --keyid-format=long 2>/dev/null)"
+    gpgconf --kill gpg-agent
     gpg --full-generate-key
     gpg --list-secret-keys --keyid-format=long
     read -P "Enter the ID (the part after `sec ed25519/`):" key_id
