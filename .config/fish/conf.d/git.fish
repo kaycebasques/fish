@@ -15,7 +15,9 @@ end
 git config --global core.editor "vim"
 git config --global user.name "Kayce Basques"
 git config --global user.email "kaycebasques@gmail.com"
-git config --global commit.gpgsign true
+# pigweed has a test that breaks when signing is enabled
+# globally. easier to just manually configure for personal repos.
+git config --global commit.gpgsign false
 
 if not test -d $HOME/pigweed
     echo "Pigweed repo not found. Run `fish ~/cli/repos.fish` to set up."
