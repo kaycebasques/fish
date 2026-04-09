@@ -28,7 +28,7 @@ if not test -d $HOME/wt
 end
 
 set repos "technicalwriting.dev" "kaycebasques.net" "books" "sphinx" "fish-shell"
-for repo in $repos:
+for repo in $repos
     if not test -d $HOME/$repo
         echo "$repo not found. Run `fish ~/cli/repos.fish` to set up."
     end

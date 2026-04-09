@@ -15,7 +15,7 @@ if not test -d $HOME/pigweed
 end
 
 set repos "technicalwriting.dev" "kaycebasques.net" "books" "sphinx" "fish-shell"
-for repo in $repos:
+for repo in $repos
     if not test -d $HOME/$repo
         cd $HOME
         git clone git@github.com:kaycebasques/$repo.git
