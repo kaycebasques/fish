@@ -1,1 +1,4 @@
-# empty as a reminder to use fish instead
+# switch to fish in interactive sessions
+if [[ $- == *i* ]]; then
+    exec fish
+fi
