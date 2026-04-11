@@ -13,6 +13,7 @@ if not test -n "$(gpg --list-secret-keys --keyid-format=long 2>/dev/null)"
 end
 
 abbr --add ga "git add"
+abbr --add ga. "git add ."
 abbr --add gb "git branch"
 abbr --add gcane "git commit --amend --no-edit"
 abbr --add gcm "git commit -m"
