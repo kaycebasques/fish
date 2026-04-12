@@ -2,7 +2,7 @@
 
 if not test -d $HOME/pigweed
     cd $HOME
-    git clone https://pigweed.googlesource.com/pigweed/pigweed
+    git clone --depth 1 https://pigweed.googlesource.com/pigweed/pigweed
     cd pigweed
     set -l f (git rev-parse --git-dir)/hooks/commit-msg
     mkdir -p (dirname $f)
