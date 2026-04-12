@@ -21,3 +21,5 @@ gpg --armor --export $key_id
 echo "TODO: Add the key to https://github.com/settings/gpg/new"
 git config --global user.signingkey $key_id
 
+cd $HOME/cli
+git config --local commit.gpgsign true
