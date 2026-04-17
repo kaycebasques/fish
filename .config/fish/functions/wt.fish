@@ -36,13 +36,17 @@ function wt
                 end
             end
             
-            set -l latest_ps (string sort -n $patchsets)[-1]
+            set -l latest_ps (printf "%s\n" $patchsets | sort -n | tail -n1)
             echo "Latest patchset is $latest_ps"
             
             set -l ref "refs/changes/$shard/$number/$latest_ps"
             
             echo "Fetching $ref..."
             git fetch $url $ref
+            if test $status -ne 0
+                echo "Failed to fetch $ref"
+                return 1
+            end
             
             set -l wt_path "$HOME/wt/$number"
             set -l branch "$number"
